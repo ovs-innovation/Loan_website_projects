@@ -708,6 +708,7 @@ progress {
 .list-unstyled {
     padding-left: 0;
     list-style: none
+    
 }
 
 .list-inline {
@@ -749,8 +750,9 @@ progress {
 }
 
 .img-fluid {
-    max-width: 100%;
+ 
     height: auto
+    max-width: 100px;
 }
 
 .img-thumbnail {

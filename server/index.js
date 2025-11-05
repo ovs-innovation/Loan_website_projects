@@ -9,6 +9,10 @@ app.use(express.static(path.join(__dirname, '..')));
 
 app.use(express.json());
 
+// Import routes
+const routes = require('./routes/route');
+app.use('/api', routes);
+
 // Route for the home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'index.html'));

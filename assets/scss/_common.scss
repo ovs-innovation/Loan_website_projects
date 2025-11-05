@@ -339,7 +339,7 @@ label {
 			line-height: 30px;
 
 			&::before {
-				animation: letters-loading 4s infinite;
+				animation: letters-loading 6s infinite;
 				color: $heding;
 				content: attr(data-text-preloader);
 				left: 0;
