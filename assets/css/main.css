@@ -9535,7 +9535,7 @@ ul.slick-dots li.slick-active button {
 }
 .theme-banner-five .main-title {
   color: #000000;
-  font-size: 120px;
+  font-size: 70px !important;
   line-height: 1;
   margin-bottom: 27px;
 }
