@@ -1292,15 +1292,25 @@
           console.log("Submitting payload:", payload);
 
           try {
+            // Show loader
+            Swal.fire({
+              title: "Sending...",
+              text: "Please wait while we send your feedback.",
+              allowOutsideClick: false,
+              didOpen: () => {
+                Swal.showLoading();
+              },
+            });
+
             const res = await fetch(
-              "https://loan-website-projects.onrender.com/api/loan/apply-loan",
+              "http://localhost:3000/api/loan/apply-loan",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
               }
             );
-
+            Swal.close();
             if (res.ok) {
               form.reset();
               Swal.fire({

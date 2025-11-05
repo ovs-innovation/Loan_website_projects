@@ -49,7 +49,7 @@ const applyForLoan = async (req, res) => {
         <li><strong>Email:</strong> ${email}</li>
       </ul>
       <br/>
-      <p>Warm regards,<br><strong>Customer Support Team</strong><br>${process.env.SENDER_NAME || "Loan Support"}</p>
+      <p>Warm regards,<br><strong>Customer Support Team</strong><br>${process.env.CLIENT_NAME || "Loan Support"}</p>
     `;
 
     const response2 = await sendMail({
