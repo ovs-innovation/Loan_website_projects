@@ -9535,7 +9535,7 @@ ul.slick-dots li.slick-active button {
 }
 .theme-banner-five .main-title {
   color: #000000;
-  font-size: 70px !important;
+  font-size: 70px;
   line-height: 1;
   margin-bottom: 27px;
 }
@@ -9645,7 +9645,7 @@ ul.slick-dots li.slick-active button {
     padding-right: 15px;
   }
   .theme-banner-five .main-title {
-    font-size: 75px;
+    font-size: 70px;
   }
   .theme-banner-five p {
     font-size: 22px;
