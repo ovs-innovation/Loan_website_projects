@@ -2,11 +2,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const PORT = process.env.PORT || 3000;
+const cors = require('cors');
 
 // Serve static files from the 'fibank' directory
 app.use('/assets',express.static(path.join(__dirname, '..', 'assets')));
 app.use(express.static(path.join(__dirname, '..')));
 
+// Middleware
+app.use(cors());  
 app.use(express.json());
 
 // Import routes
