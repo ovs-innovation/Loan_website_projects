@@ -166,9 +166,4 @@ export async function sendFeedbackMessage(formData) {
     });
   });
 
-  document
-    .getElementById("loanForm")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("🎉 Form submitted successfully!");
-    });
+  
