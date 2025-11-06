@@ -5573,6 +5573,7 @@ theme-btn
   transition: all;
   -webkit-transition-duration: 800ms;
   transition-duration: 800ms;
+  text-align: center;
 }
 .ht-btn::before {
   -webkit-transition-duration: 800ms;
@@ -15217,4 +15218,9 @@ ul.slick-dots li.slick-active button {
 /* Add padding to input so text doesn’t overlap */
 .input-with-icon input {
   padding-left: 45px !important;
+}
+
+.center-btn {
+ padding-right:32px !important;
+   
 }
