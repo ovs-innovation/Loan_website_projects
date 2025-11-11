@@ -51,7 +51,7 @@ export async function sendContactMessage(formData) {
     });
 
     // Call your backend API
-    const response = await fetch("/api/contact-us", {
+    const response = await fetch("https://api.nekipay.com/api/contact-us", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -165,5 +165,6 @@ export async function sendFeedbackMessage(formData) {
       steps[currentStep].classList.add("active");
     });
   });
+
 
   
