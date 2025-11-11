@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8091;
 const cors = require('cors');
 
 // Serve static files from the 'fibank' directory
@@ -29,3 +29,4 @@ app.listen(PORT, () => {
   console.log(`📂 Serving files from: ${path.join(__dirname, '..','assets')}`);
 
 });
+
