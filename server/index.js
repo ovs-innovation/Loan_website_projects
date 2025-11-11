@@ -16,15 +16,16 @@ app.use(express.json());
 const routes = require('./routes/route');
 app.use('/api', routes);
 
-// Route for the home page
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
+// // Route for the home page
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, '..', 'index.html'));
   
-});
+// });
 
 
 // app start
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   console.log(`📂 Serving files from: ${path.join(__dirname, '..','assets')}`);
+
 });
