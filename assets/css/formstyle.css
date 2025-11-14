@@ -166,3 +166,170 @@
         padding: 10px 15px;
       }
     }
+
+
+
+    // carousel styles for home page 
+    /* Slider Container */
+.loan-carousel-container {
+    position: absolute; /* Position relative to .hero-img */
+    top: 50%;
+    left: 50%;
+  
+    transform: translate(-50%, -50%); /* Center the container */
+    width: 300px; /* Adjust as needed */
+    height: 450px; /* Adjust as needed, considering image and button */
+    overflow: hidden; /* Hide slides that are not active */
+    border-radius: 15px; /* Optional: adds rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+    z-index: 10; /* Ensure it's above other elements if needed */
+    //background-color: r; /* Light background for contrast */
+}
+
+/* Carousel Inner */
+.loan-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+    height: 100%;
+    position: relative;
+   // background:red;
+}
+
+/* Individual Slide */
+.loan-slide {
+    min-width: 100%; /* Each slide takes full width of container */
+    flex-shrink: 0; /* Prevents slides from shrinking */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+  //  background-color: red; /* White background for slides */
+    position: relative;
+}
+
+.loan-slide .loan-img {
+    max-width: 100%; /* Image should fit within the slide */
+    max-height: 100%; /* Adjust to leave space for button */
+    object-fit: contain; /* Ensure image is fully visible */
+    margin-top:-70px;
+    margin-bottom: 20px;
+}
+@media (max-width: 792px) {
+  .loan-slide .loan-img {
+    max-width: 60%; /* Image should fit within the slide */
+    max-height: 75%; /* Adjust to leave space for button */
+    object-fit: contain; /* Ensure image is fully visible */
+    margin-top:-70px;
+    margin-bottom: 20px;
+}
+}
+
+
+/* Apply Loan Button */
+.apply-loan-btn {
+    background-color: #3A97D2; /* Keep original color */
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    bottom: 40px;
+    overflow: hidden; /* Required for shine effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Shine effect */
+.apply-loan-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); /* White shine */
+    transform: skewX(-25deg);
+    transition: all 0.6s ease;
+}
+
+/* Hover */
+.apply-loan-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Shine animation on hover */
+.apply-loan-btn:hover::after {
+    left: 150%;
+}
+
+/* Click */
+.apply-loan-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Navigation Buttons */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 20; /* Ensure nav buttons are above slides */
+    border-radius: 50%; /* Circular buttons */
+    line-height: 1; /* Adjust vertical alignment of text */
+}
+
+.carousel-nav.prev {
+    left: 10px;
+}
+
+.carousel-nav.next {
+    right: 10px;
+}
+
+.carousel-nav:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Optional: Adjust main-img to integrate with slider positioning if needed */
+.hero-img .main-img {
+    opacity: 0.5; /* Example: make background image subtle if slider is foreground */
+    filter: blur(2px); /* Example: blur background image */
+}
+
+
+
+
+ 
+/* Currency Icon Styling for Loan Amount Input */
+.input-with-icon {
+    position: relative;
+}
+
+.currency-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Adjust as needed */
+    transform: translateY(-50%);
+    z-index: 2; 
+    color: #495057; 
+    font-weight: bold;
+}
+
+/* Adjust input padding to make space for the icon */
+.input-with-icon input.form-control {
+    padding-left: 30px; 
+}
+ 

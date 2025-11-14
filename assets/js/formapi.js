@@ -168,3 +168,120 @@ export async function sendFeedbackMessage(formData) {
 
 
   
+ 
+ 
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Get the form and modal elements using their IDs
+    const loanForm = document.getElementById('loanFormSingle');
+    const modalElement = document.getElementById('loanModal');
+    
+    // Check if the form exists before adding the submit listener
+    if (!loanForm) return;
+
+    loanForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Ensure form validation passes before proceeding
+        if (!loanForm.checkValidity()) {
+            e.stopPropagation();
+            loanForm.classList.add('was-validated');
+            return;
+        }
+
+        // --- 2. Collect Data using unique IDs ---
+        // We must use specific IDs to differentiate between the two number inputs.
+        const phone = document.getElementById('phoneInput')?.value || "";
+        const email = document.getElementById('emailInput')?.value || "";
+        const name = document.getElementById('nameInput')?.value || "";
+        const loanType = document.getElementById('loanTypeSelect')?.value || "";
+        const applicantType = document.getElementById('applicantTypeSelect')?.value || "";
+        const loanAmount = document.getElementById('loanAmountInput')?.value || "";
+
+        const payload = {
+            phone,
+            email,
+            name,
+            loanType,
+            applicantType,
+            loanAmount,
+        };
+
+       // console.log("Submitting payload:", payload);
+        
+        // --- 3. API Call Logic (using your provided structure) ---
+        try {
+            // Show loader using SweetAlert (Swal must be loaded on the page)
+            Swal.fire({
+                title: "Sending...",
+                text: "Please wait while we submit your application.",
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                },
+            });
+
+            const res = await fetch(
+                "https://api.nekipay.com/api/loan/apply-loan",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
+                }
+            );
+            
+            // Close the loader before showing success/failure message
+            Swal.close(); 
+            
+            if (res.ok) {
+                // Success
+                loanForm.reset();
+                loanForm.classList.remove('was-validated'); 
+                
+                // Close the Bootstrap modal if open
+                if (typeof bootstrap !== 'undefined' && modalElement) {
+                    const modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
+                    modalInstance.hide();
+                }
+
+                Swal.fire({
+                    title: "Application Submitted!",
+                    text: "Thank you for applying. We will get back to you soon.",
+                    icon: "success",
+                    confirmButtonColor: "#3085d6",
+                }).then(() => {
+                     // Reload the page only after user clicks OK on success
+                     window.location.reload(); 
+                });
+            } else {
+                // API returned an error (e.g., 400, 500)
+                Swal.fire({
+                    title: "Submission Failed",
+                    text: "There was an error submitting your application. Please check your data and try again later.",
+                    icon: "error",
+                    confirmButtonColor: "#d33",
+                });
+            }
+        } catch (err) {
+            console.error("Fetch Error:", err);
+            // Close any open loader
+            Swal.close(); 
+            
+            // Network/Connection Error
+            Swal.fire({
+                title: "Network Error",
+                text: "Something went wrong. Please check your connection and try again.",
+                icon: "error",
+                confirmButtonColor: "#d33",
+            });
+        }
+    });
+
+    // Reset validation when modal is closed
+    if (modalElement) {
+        modalElement.addEventListener('hidden.bs.modal', function () {
+            loanForm.classList.remove('was-validated');
+            loanForm.reset();
+        });
+    }
+});
+ 

@@ -9,13 +9,13 @@
     />
     <meta
       name="description"
-      content="AK OMKAR Enterprises is a leading finance consultant dedicated to helping individuals and businesses secure the best financial solutions. With expertise in loans, credit, and investment strategies, we provide personalized guidance to meet your unique needs."
+      content="AK ONKAR Enterprises is a leading finance consultant dedicated to helping individuals and businesses secure the best financial solutions. With expertise in loans, credit, and investment strategies, we provide personalized guidance to meet your unique needs."
     />
-    <title>AK Omkar Enterprises – Finance Consultant</title>
+    <title>AK ONKAR Enterprises – Finance Consultant</title>
     <meta property="og:site_name" content="Fibank" />
     <meta property="og:url" content="" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="AK OMKAR Enterprises" />
+    <meta property="og:title" content="AK ONKAR Enterprises" />
     <meta name="og:image" content="images/assets/ogg.png" />
     <!-- For IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -108,7 +108,7 @@
                 >
                   <div class="ht-topbar-left">
                     <a class="ht-promo d-none d-md-inline-block" href="#"
-                      ><span class="hello"></span> Welcome to AK OMKAR
+                      ><span class="hello"></span> Welcome to AK ONKAR
                       ENTERPISES (Finance Consultant)</a
                     >
                     <a
@@ -266,7 +266,6 @@
                         <button
                           type="button"
                           class="prev-btn ht-btn bstyle-2 center-btn"
-                           
                         >
                           Back
                         </button>
@@ -285,7 +284,10 @@
                         required
                       />
                       <div class="button-group">
-                        <button type="button" class="prev-btn ht-btn bstyle-2 center-btn">
+                        <button
+                          type="button"
+                          class="prev-btn ht-btn bstyle-2 center-btn"
+                        >
                           Back
                         </button>
                         <button type="button" class="next-btn ht-btn">
@@ -308,7 +310,10 @@
                         <option>Personal Loan</option>
                       </select>
                       <div class="button-group">
-                        <button type="button" class="prev-btn ht-btn bstyle-2 center-btn">
+                        <button
+                          type="button"
+                          class="prev-btn ht-btn bstyle-2 center-btn"
+                        >
                           Back
                         </button>
                         <button type="button" class="next-btn ht-btn">
@@ -327,10 +332,13 @@
                         <option>Self-Employed</option>
                       </select>
                       <div class="button-group">
-                        <button type="button" class="prev-btn ht-btn bstyle-2 center-btn">
+                        <button
+                          type="button"
+                          class="prev-btn ht-btn bstyle-2 center-btn"
+                        >
                           Back
                         </button>
-                        <button type="button" class="next-btn ht-btn ">
+                        <button type="button" class="next-btn ht-btn">
                           Next
                         </button>
                       </div>
@@ -360,14 +368,272 @@
                         </button>
                       </div>
                     </div>
-
-                    
                   </form>
                 </section>
                 <!-- ========= MULTI-STEP FORM END ========= -->
+
+                <div
+                  class="modal fade"
+                  id="loanModal"
+                  tabindex="-1"
+                  aria-labelledby="loanModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="loanModalLabel">
+                          Quick Loan Application
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <form id="loanFormSingle" class="p-3">
+                          <div class="row mb-3">
+                            <div class="col-md-6">
+                              <label for="phoneInput" class="form-label"
+                                >Phone Number
+                                <span class="text-danger">*</span></label
+                              >
+                              <input
+                                id="phoneInput"
+                                type="number"
+                                class="form-control"
+                                placeholder="Enter Phone Number"
+                                required
+                              />
+                            </div>
+                            <div class="col-md-6">
+                              <label for="nameInput" class="form-label"
+                                >Full Name
+                                <span class="text-danger">*</span></label
+                              >
+                              <input
+                                id="nameInput"
+                                type="text"
+                                class="form-control"
+                                placeholder="Enter Full Name"
+                                required
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row mb-3">
+                            <div class="col-md-6">
+                              <label for="emailInput" class="form-label"
+                                >Email <span class="text-danger">*</span></label
+                              >
+                              <input
+                                id="emailInput"
+                                type="email"
+                                class="form-control"
+                                placeholder="Enter your Email"
+                                required
+                              />
+                            </div>
+                            <div class="col-md-6">
+                              <label for="loanTypeSelect" class="form-label"
+                                >Loan Type
+                                <span class="text-danger">*</span></label
+                              >
+                              <select
+                                id="loanTypeSelect"
+                                class="form-control"
+                                required
+                              >
+                                <option value="">Select Loan Type</option>
+                                <option>Home Loan</option>
+                                <option>Loan Against Property</option>
+                                <option>Business Loan</option>
+                                <option>MSME Loan</option>
+                                <option>SME Loan</option>
+                                <option>Mudra Loan</option>
+                                <option>Car Loan</option>
+                                <option>Personal Loan</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="row mb-4">
+                            <div class="col-md-6">
+                              <label
+                                for="applicantTypeSelect"
+                                class="form-label"
+                                >Applicant Type
+                                <span class="text-danger">*</span></label
+                              >
+                              <select
+                                id="applicantTypeSelect"
+                                class="form-control"
+                                required
+                              >
+                                <option value="">Select Applicant Type</option>
+                                <option>Businessman</option>
+                                <option>Salaried</option>
+                                <option>Government Employee</option>
+                                <option>Self-Employed</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="loanAmountInput" class="form-label"
+                                >Desired Loan Amount
+                                <span class="text-danger">*</span></label
+                              >
+                              <div class="input-with-icon position-relative">
+                                <span class="currency-icon">₹</span>
+                                <input
+                                  id="loanAmountInput"
+                                  type="number"
+                                  class="form-control"
+                                  placeholder="e.g., 500000"
+                                  required
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="text-center">
+                            <button
+                              type="submit"
+                              class="submit-btn ht-btn w-50"
+                            >
+                              Submit Application
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div class="col-lg-6 d-flex justify-content-lg-end reverse-img">
+              <div
+                class="col-lg-6 d-flex justify-content-lg-end reverse-img overflow-hidden"
+              >
+                <div
+                  class="hero-img position-relative d-inline-block justify-content-center align-items-center"
+                >
+                  <div class="loan-carousel-container">
+                    <div class="loan-carousel">
+                      <div class="loan-slide">
+                        <img
+                          src="assets/img/hero/home.png"
+                          alt="Home Loan"
+                          class="loan-img"
+                        />
+                        <button
+                          class="apply-loan-btn ht-btn"
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#loanModal"
+                        >
+                          Apply Home Loan
+                        </button>
+                      </div>
+                      <div class="loan-slide">
+                        <img
+                          src="assets/img/hero/loanagainstproperty.png"
+                          alt="Loan Against Property"
+                          class="loan-img"
+                        />
+                        <button
+                          class="apply-loan-btn ht-btn"
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#loanModal"
+                        >
+                          Apply Loan Against Property
+                        </button>
+                      </div>
+                      <div class="loan-slide">
+                        <img
+                          src="assets/img/hero/business.png"
+                          alt="Business Loan"
+                          class="loan-img"
+                        />
+                        <button class="apply-loan-btn ht-btn"
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#loanModal">
+                          Apply Business Loan
+                        </button>
+                      </div>
+                      <div class="loan-slide">
+                        <img
+                          src="assets/img/hero/msme.png"
+                          alt="MSME Loan"
+                          class="loan-img"
+                        />
+                        <button class="apply-loan-btn ht-btn"
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#loanModal">Apply MSME Loan</button>
+                      </div>
+                      <div class="loan-slide">
+                        <img
+                          src="assets/img/hero/sme.png"
+                          alt="SME Loan"
+                          class="loan-img"
+                        />
+                        <button class="apply-loan-btn ht-btn"
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#loanModal">Apply SME Loan</button>
+                      </div>
+                      <div class="loan-slide">
+                        <img
+                          src="assets/img/hero/mudra.png"
+                          alt="Mudra Loan"
+                          class="loan-img"
+                        />
+                        <button class="apply-loan-btn ht-btn"
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#loanModal">Apply Mudra Loan</button>
+                      </div>
+                      <div class="loan-slide">
+                        <img
+                          src="assets/img/hero/car.png"
+                          alt="Car Loan"
+                          class="loan-img"
+                        />
+                        <button
+                          class="apply-loan-btn ht-btn"
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#loanModal"
+                        >
+                          Apply Car Loan
+                        </button>
+                      </div>
+
+                       <div class="loan-slide">
+                        <img
+                          src="assets/img/hero/personal.png"
+                          alt="Personal Loan"
+                          class="loan-img"
+                        />
+                        <button
+                          class="apply-loan-btn ht-btn"
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#loanModal"
+                        >
+                          Apply Personal Loan
+                        </button>
+                      </div>
+                    </div>
+                    <button class="carousel-nav prev d-none">❮</button>
+                    <button class="carousel-nav next d-none">❯</button>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-lg-6 d-flex justify-content-lg-end reverse-img">
                 <div
                   class="hero-img position-relative d-inline-block justify-content-center align-items-center"
                 >
@@ -390,7 +656,7 @@
                     alt="shape"
                   />
                 </div>
-              </div>
+              </div> -->
             </div>
             <section class="partner-section py-5">
               <div class="container text-center">
@@ -792,7 +1058,7 @@
                           aria-expanded="false"
                           aria-controls="collapse5s"
                         >
-                          What makes AK Omkar Enterprises different from others?
+                          What makes AK ONKAR Enterprises different from others?
                         </button>
                       </h2>
                       <div
@@ -958,7 +1224,7 @@
                     <p class="small text-muted px-3">
                       With over 18 years of experience in financial services,
                       Bhupender Singh has built
-                      <strong>AK Omkar Enterprises</strong> on a foundation of
+                      <strong>AK ONKAR Enterprises</strong> on a foundation of
                       trust, transparency, and client satisfaction. His
                       expertise covers home, business, and property-based
                       financing, ensuring clients get the most suitable
@@ -1190,9 +1456,7 @@
             <div class="row align-items-center text-center text-md-start">
               <div class="col-md-6 pb-2">
                 <div class="copyright-text">
-                  <a href="https://themeforest.net/user/creativegigs/portfolio">
-                    @ Powered By AK OMKAR enterprises
-                  </a>
+                  <a href="#"> @ Powered By AK ONKAR enterprises </a>
                 </div>
               </div>
               <div class="col-md-6 pb-2 text-center text-md-end">
@@ -1340,6 +1604,68 @@
             });
           }
         });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.querySelector(".loan-carousel");
+        const slides = document.querySelectorAll(".loan-slide");
+        const prevButton = document.querySelector(".carousel-nav.prev");
+        const nextButton = document.querySelector(".carousel-nav.next");
+        const container = document.querySelector(".loan-carousel-container"); // Get the container for hover
+
+        let currentIndex = 0;
+        let slideInterval;
+        const slideDuration = 1500; // 3 seconds per slide
+
+        function showSlide(index) {
+          if (index < 0) {
+            currentIndex = slides.length - 1;
+          } else if (index >= slides.length) {
+            currentIndex = 0;
+          } else {
+            currentIndex = index;
+          }
+          carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+          showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+          showSlide(currentIndex - 1);
+        }
+
+        function startSlider() {
+          slideInterval = setInterval(nextSlide, slideDuration);
+        }
+
+        function stopSlider() {
+          clearInterval(slideInterval);
+        }
+
+        // Event Listeners for Navigation
+        nextButton.addEventListener("click", () => {
+          stopSlider(); // Stop on manual interaction
+          nextSlide();
+          startSlider(); // Restart after a moment
+        });
+
+        prevButton.addEventListener("click", () => {
+          stopSlider(); // Stop on manual interaction
+          prevSlide();
+          startSlider(); // Restart after a moment
+        });
+
+        // Pause on hover
+        container.addEventListener("mouseenter", stopSlider);
+        container.addEventListener("mouseleave", startSlider);
+
+        // Initial setup
+        showSlide(currentIndex); // Display the first slide
+        startSlider(); // Start automatic sliding
       });
     </script>
 
