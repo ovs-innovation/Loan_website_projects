@@ -15024,6 +15024,14 @@ ul.slick-dots li.slick-active button {
 }
 .footer-five .footer-logo {
   margin-bottom: 43px;
+  text-align: center !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-five .footer-logo img {
+  display: block !important;
+  margin: 0 auto !important;
 }
 .footer-five .footer-widget ul li a {
   color: #ffffff;
@@ -15127,6 +15135,52 @@ ul.slick-dots li.slick-active button {
     border-radius: 10px;
   }
 
+/* Navbar padding and mobile horizontal overflow fixes */
+/* Add side padding to the header/navbar container so it doesn't touch screen edges */
+.container-fluid.custom-container,
+.main-header-area {
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  
+}
+
+/* Ensure header content respects viewport and doesn't create horizontal scroll */
+@media (max-width: 991px) {
+  .container-fluid.custom-container,
+  .main-header-area {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Hide accidental horizontal overflow on mobile view (prevents arrows/overflows) */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Ensure common slider/list components don't overflow horizontally */
+  .slick-slider, .slick-list, .slick-track {
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  /* Keep images and interactive controls inside viewport */
+  img, .slick-arrow, .owl-prev, .owl-next {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Small phones - slightly reduce padding */
+@media (max-width: 480px) {
+  .container-fluid.custom-container,
+  .main-header-area {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+
   .about-img-group .main-img2 {
     margin-top: 15px;
     display:none;
@@ -15223,4 +15277,34 @@ ul.slick-dots li.slick-active button {
 .center-btn {
  padding-right:32px !important;
    
+}
+
+/* Non-invasive logo size overrides targeting only the logo image files */
+img[src*="assets/img/logo/logo2.png"],
+img[src*="assets/img/logo/logo.png"] {
+  width: auto !important;
+  height: auto !important;
+  display: block;
+  max-width: 260px !important; /* larger desktop default */
+}
+
+@media (max-width: 1200px) {
+  img[src*="assets/img/logo/logo2.png"],
+  img[src*="assets/img/logo/logo.png"] {
+    max-width: 210px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  img[src*="assets/img/logo/logo2.png"],
+  img[src*="assets/img/logo/logo.png"] {
+    max-width: 160px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  img[src*="assets/img/logo/logo2.png"],
+  img[src*="assets/img/logo/logo.png"] {
+    max-width: 140px !important;
+  }
 }
