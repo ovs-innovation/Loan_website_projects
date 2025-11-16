@@ -15161,7 +15161,7 @@ ul.slick-dots li.slick-active button {
   /* Ensure common slider/list components don't overflow horizontally */
   .slick-slider, .slick-list, .slick-track {
     overflow: hidden;
-    max-width: 100%;
+    /* max-width: 100%; */
   }
 
   /* Keep images and interactive controls inside viewport */
