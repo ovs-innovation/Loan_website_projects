@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = this.email.value.trim();
       const mobile = this.mobile.value.trim();
       const message = this.message.value.trim();
+      const loanPreferenceField = this.querySelector('[name="loan-preference"]');
+      const loanPreference = loanPreferenceField
+        ? loanPreferenceField.value.trim()
+        : "";
 
       if (!name || !email || !mobile || !message) {
         Swal.fire({
@@ -22,6 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const formData = { name, email, mobile, message };
+      if (loanPreference) {
+        formData.loanPreference = loanPreference;
+      }
       await sendContactMessage(formData);
       this.reset();
     });
